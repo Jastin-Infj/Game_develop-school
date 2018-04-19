@@ -23,4 +23,8 @@ private:
 	int mark;			   //マーク
 	std::string  FilePath; //ファイル名パス
 	Texture image;	       //画像読み込み
+
+	const int Image_Size_x = 150;
+	const int Image_Size_y = 200;
+
 };

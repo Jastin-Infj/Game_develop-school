@@ -18,7 +18,6 @@ TaskFlag Title::Update()
 	{
 		nowtask = Task_Game;
 	}
-	
 	return nowtask;
 }
 

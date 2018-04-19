@@ -11,13 +11,13 @@ void Game::Initialize()
 //-------------------------------------------------------------------------------------------------
 TaskFlag Game::Update()
 {
-	TaskFlag nowTask = TaskFlag::Task_Game;
-	
-	//‰¼ˆ— ƒGƒ‰[‚Í‚±‚±I
-	if (gameEngine->in.down(Input::KeyBoard::S))
+	TaskFlag nowTask = Task_Game;
+
+	if (gameEngine->in.key.down(Input::KeyBoard::S))
 	{
 		nowTask = Task_Title;
 	}
+
 	return nowTask;
 }
 //-------------------------------------------------------------------------------------------------

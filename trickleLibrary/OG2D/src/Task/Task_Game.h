@@ -8,6 +8,8 @@
 #include "CollisionManager\CollisionManager.h"
 #include "OGSystem\OGsystem.h"
 #include "Back\Back.h"
+#include "Kard\Kard.h"
+#include "Map\Map.h"
 
 class Game
 {
@@ -21,9 +23,11 @@ public:
 	//™™™™//
 	//std::vector<Bucket*> bucket;
 	CollisionManager cm;
+	Map map;
 private:
 	Back back;
 	//---------------------------------------------------------------------
 	//ƒƒ“ƒo[ŠÖ”
 	//---------------------------------------------------------------------
+	Kard kard[18];//18–‡
 };

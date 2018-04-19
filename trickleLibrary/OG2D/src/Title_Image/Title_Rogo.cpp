@@ -15,17 +15,19 @@ void Title_Rogo::Initialize()
 
 	FilePath = "title.png";
 	image.TextureCreate(FilePath);
-	CreateObject(Objform::Cube, Vec2(640 / 2, 100), Map_size, 0);
+	CreateObject(Objform::Cube, Vec2(640 / 2, 0), Map_size, 0);
+	easingY.create(ci_ext::EasingName::SINE_OUT, position.y, 1020 / 2, 300, 0);
 }
 void Title_Rogo::Update()
 {
-	
+	position.y += easingY.nowf();
 	//easing‚ÍŒã‰ñ‚µ
 }
 void Title_Rogo::Render()
 {
 	Box2D draw(position, Scale * 2);
 	draw.OffsetSize();
+	draw.y += easingY.nowf();
 	Box2D src(0.0f,0.0f,Map_size.x , Map_size.y);
 	image.Draw(draw,src);
 }
