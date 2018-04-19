@@ -4,8 +4,8 @@
 //--------------------------------------------------
 EngineSystem::EngineSystem()
 {
-	this->w_wi = 960;
-	this->w_he = 540;
+	this->w_wi = 1280;
+	this->w_he = 720;
 	this->w_na = "NoName";
 	this->w_sc = false;
 }

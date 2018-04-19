@@ -6,8 +6,10 @@
 #include "Win\WinMain.h"
 #include "OGSystem\OGsystem.h"
 #include "Object\Object.h"
+#include "Back\Back.h"
 #include "Map\Map.h"
 #include "CollisionManager\CollisionManager.h"
+#include "Title_Image\TItle_Rogo.h"
 class Title
 {
 public:
@@ -15,11 +17,13 @@ public:
 	TaskFlag Update();
 	void Render2D();
 	void Finalize();
-
 	//™™™™//
 	//’Ç‰Á•Ï”//
 	//™™™™//
 	CollisionManager cm;
 	Map map;
-
+	Back back;
+private:
+	//’Ç‰Á•Ï”//
+	Title_Rogo title_rogo;
 };

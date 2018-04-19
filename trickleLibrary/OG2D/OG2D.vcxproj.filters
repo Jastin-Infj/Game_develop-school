@@ -69,6 +69,15 @@
     <Filter Include="ソースファイル\OGSystem\System\Shader">
       <UniqueIdentifier>{07a5ea8b-eb70-4b10-ba9d-e96be3ec8a4f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソースファイル\Kard">
+      <UniqueIdentifier>{bd19a9cc-95c7-4b32-9b05-4bbb599a08aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\easing">
+      <UniqueIdentifier>{de38cc48-09d5-41fa-8d4e-acfaa01fb81f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Back">
+      <UniqueIdentifier>{dd6f2b4a-ebf1-4715-b543-9af3bc6680cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Win\WinMain.cpp">
@@ -137,6 +146,15 @@
     <ClCompile Include="src\Shader\shader.cpp">
       <Filter>ソースファイル\OGSystem\System\Shader</Filter>
     </ClCompile>
+    <ClCompile Include="src\Kard\Kard.cpp">
+      <Filter>ソースファイル\Kard</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Back\Back.cpp">
+      <Filter>ソースファイル\Back</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Title_Image\Title_Rogo.cpp">
+      <Filter>ソースファイル\Task\Title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Win\WinMain.h">
@@ -190,9 +208,6 @@
     <ClInclude Include="src\OGSystem\Audio\StreamingSound.h">
       <Filter>ソースファイル\OGSystem\System\Sound</Filter>
     </ClInclude>
-    <ClInclude Include="src\Task\Task_Game.h">
-      <Filter>ソースファイル\Task\Game</Filter>
-    </ClInclude>
     <ClInclude Include="src\Task\Task_Title.h">
       <Filter>ソースファイル\Task\Title</Filter>
     </ClInclude>
@@ -207,6 +222,21 @@
     </ClInclude>
     <ClInclude Include="src\OGSystem\Timer\glTimer.h">
       <Filter>ソースファイル\OGSystem\System\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Kard\Kard.h">
+      <Filter>ソースファイル\Kard</Filter>
+    </ClInclude>
+    <ClInclude Include="src\easing\easing.hpp">
+      <Filter>ソースファイル\easing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Back\Back.h">
+      <Filter>ソースファイル\Back</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Title_Image\TItle_Rogo.h">
+      <Filter>ソースファイル\Task\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Task\Task_Game.h">
+      <Filter>ソースファイル\Task\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

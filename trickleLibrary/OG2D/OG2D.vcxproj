@@ -151,7 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Back\Back.cpp" />
     <ClCompile Include="src\CollisionManager\CollisionManager.cpp" />
+    <ClCompile Include="src\Kard\Kard.cpp" />
     <ClCompile Include="src\Map\Map.cpp" />
     <ClCompile Include="src\Object\Object.cpp" />
     <ClCompile Include="src\OGSystem\Audio\Audio.cpp" />
@@ -172,11 +174,15 @@
     <ClCompile Include="src\Shader\shader.cpp" />
     <ClCompile Include="src\Task\Task_Game.cpp" />
     <ClCompile Include="src\Task\Task_Title.cpp" />
+    <ClCompile Include="src\Title_Image\Title_Rogo.cpp" />
     <ClCompile Include="src\Win\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Back\Back.h" />
     <ClInclude Include="src\CollisionManager\CollisionManager.h" />
+    <ClInclude Include="src\easing\easing.hpp" />
     <ClInclude Include="src\GameProcessManagement\Timer.h" />
+    <ClInclude Include="src\Kard\Kard.h" />
     <ClInclude Include="src\Map\Map.h" />
     <ClInclude Include="src\Object\Object.h" />
     <ClInclude Include="src\OGSystem\Audio\Audio.h" />
@@ -197,6 +203,7 @@
     <ClInclude Include="src\Shader\shader.h" />
     <ClInclude Include="src\Task\Task_Game.h" />
     <ClInclude Include="src\Task\Task_Title.h" />
+    <ClInclude Include="src\Title_Image\TItle_Rogo.h" />
     <ClInclude Include="src\Win\WinMain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

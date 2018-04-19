@@ -7,8 +7,7 @@
 #include "Win\WinMain.h"
 #include "CollisionManager\CollisionManager.h"
 #include "OGSystem\OGsystem.h"
-#include "Map\Map.h"
-
+#include "Back\Back.h"
 
 class Game
 {
@@ -21,17 +20,10 @@ public:
 	//’Ç‰Á•Ï”//
 	//™™™™//
 	//std::vector<Bucket*> bucket;
-	
-	Map map;
-	
 	CollisionManager cm;
-	
-
 private:
+	Back back;
 	//---------------------------------------------------------------------
 	//ƒƒ“ƒo[ŠÖ”
 	//---------------------------------------------------------------------
-	//ƒJƒƒ‰ˆ—
-	void Camera_move();
-	
 };
