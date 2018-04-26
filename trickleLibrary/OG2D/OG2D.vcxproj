@@ -171,17 +171,17 @@
     <ClCompile Include="src\OGSystem\Timer\glTimer.cpp" />
     <ClCompile Include="src\OGSystem\Window\Window.cpp" />
     <ClCompile Include="src\OGSystem\_OGsystem.cpp" />
+    <ClCompile Include="src\Player\Player.cpp" />
     <ClCompile Include="src\Shader\shader.cpp" />
     <ClCompile Include="src\Task\Task_Game.cpp" />
     <ClCompile Include="src\Task\Task_Title.cpp" />
+    <ClCompile Include="src\template\template.cpp" />
     <ClCompile Include="src\Title_Image\Title_Rogo.cpp" />
     <ClCompile Include="src\Win\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Back\Back.h" />
     <ClInclude Include="src\CollisionManager\CollisionManager.h" />
-    <ClInclude Include="src\easing\easing.hpp" />
-    <ClInclude Include="src\GameProcessManagement\Timer.h" />
     <ClInclude Include="src\Kard\Kard.h" />
     <ClInclude Include="src\Map\Map.h" />
     <ClInclude Include="src\Object\Object.h" />
@@ -191,6 +191,7 @@
     <ClInclude Include="src\OGSystem\Audio\StreamingSound.h" />
     <ClInclude Include="src\OGSystem\Camera\Camera.h" />
     <ClInclude Include="src\OGSystem\Collision\Collision.h" />
+    <ClInclude Include="src\OGSystem\Easing\easing.hpp" />
     <ClInclude Include="src\OGSystem\Font\Font.h" />
     <ClInclude Include="src\OGSystem\FPS\FPS.h" />
     <ClInclude Include="src\OGSystem\Input\Input.h" />
@@ -200,9 +201,11 @@
     <ClInclude Include="src\OGSystem\Timer\glTimer.h" />
     <ClInclude Include="src\OGSystem\Window\Window.h" />
     <ClInclude Include="src\OGSystem\_OGsystem.h" />
+    <ClInclude Include="src\Player\Player.h" />
     <ClInclude Include="src\Shader\shader.h" />
     <ClInclude Include="src\Task\Task_Game.h" />
     <ClInclude Include="src\Task\Task_Title.h" />
+    <ClInclude Include="src\template\template.h" />
     <ClInclude Include="src\Title_Image\TItle_Rogo.h" />
     <ClInclude Include="src\Win\WinMain.h" />
   </ItemGroup>

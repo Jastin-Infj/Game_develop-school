@@ -72,11 +72,14 @@
     <Filter Include="ソースファイル\Kard">
       <UniqueIdentifier>{bd19a9cc-95c7-4b32-9b05-4bbb599a08aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースファイル\easing">
-      <UniqueIdentifier>{de38cc48-09d5-41fa-8d4e-acfaa01fb81f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースファイル\Back">
       <UniqueIdentifier>{dd6f2b4a-ebf1-4715-b543-9af3bc6680cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\OGSystem\System\easing">
+      <UniqueIdentifier>{be998f4f-7304-4641-9aac-ee2b1de3ee30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースファイル\Player">
+      <UniqueIdentifier>{01168ba6-cb81-4abc-8db0-7736a200af97}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -153,7 +156,13 @@
       <Filter>ソースファイル\Back</Filter>
     </ClCompile>
     <ClCompile Include="src\Title_Image\Title_Rogo.cpp">
-      <Filter>ソースファイル\Task\Title</Filter>
+      <Filter>ソースファイル\Back</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Player\Player.cpp">
+      <Filter>ソースファイル\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\template\template.cpp">
+      <Filter>ヘッダー ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,9 +223,6 @@
     <ClInclude Include="src\OGSystem\Audio\SoundManager.h">
       <Filter>ソースファイル\OGSystem\System\Sound</Filter>
     </ClInclude>
-    <ClInclude Include="src\GameProcessManagement\Timer.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="src\Shader\shader.h">
       <Filter>ソースファイル\OGSystem\System\Shader</Filter>
     </ClInclude>
@@ -226,17 +232,23 @@
     <ClInclude Include="src\Kard\Kard.h">
       <Filter>ソースファイル\Kard</Filter>
     </ClInclude>
-    <ClInclude Include="src\easing\easing.hpp">
-      <Filter>ソースファイル\easing</Filter>
-    </ClInclude>
     <ClInclude Include="src\Back\Back.h">
       <Filter>ソースファイル\Back</Filter>
     </ClInclude>
-    <ClInclude Include="src\Title_Image\TItle_Rogo.h">
-      <Filter>ソースファイル\Task\Title</Filter>
-    </ClInclude>
     <ClInclude Include="src\Task\Task_Game.h">
       <Filter>ソースファイル\Task\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Title_Image\TItle_Rogo.h">
+      <Filter>ソースファイル\Back</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OGSystem\Easing\easing.hpp">
+      <Filter>ソースファイル\OGSystem\System\easing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player\Player.h">
+      <Filter>ソースファイル\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\template\template.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

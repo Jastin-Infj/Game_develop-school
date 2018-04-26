@@ -1,7 +1,7 @@
 #pragma once
 #include "Object\Object.h"
 
-class BackGround : Object
+class BackGround :public Object
 {
 public:
 	BackGround()

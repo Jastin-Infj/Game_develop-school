@@ -7,8 +7,6 @@
 #include "OGSystem\OGsystem.h"
 #include "Object\Object.h"
 #include "Back\Back.h"
-#include "Map\Map.h"
-#include "CollisionManager\CollisionManager.h"
 #include "Title_Image\TItle_Rogo.h"
 class Title
 {
@@ -20,8 +18,6 @@ public:
 	//™™™™//
 	//’Ç‰Á•Ï”//
 	//™™™™//
-	CollisionManager cm;
-	Map map;
 	Back back;
 private:
 	//’Ç‰Á•Ï”//

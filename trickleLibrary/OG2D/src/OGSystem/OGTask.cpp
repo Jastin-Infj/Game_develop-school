@@ -21,9 +21,6 @@ void _OGTK::_myGameUpdate()
 		case Task_Game:
 			game.Finalize();
 			break;
-		case Task_Sample:
-			//sample.Finalize();
-			break;
 		}
 		nowTask = nextTask;
 		gameEngine->ChengeTask();
@@ -35,9 +32,6 @@ void _OGTK::_myGameUpdate()
 		case Task_Game:
 			game.Initialize();
 			break;
-		case Task_Sample:
-			//sample.Initialize();
-			break;
 		}
 	}
 	if (!gameEngine->GetPause()) {
@@ -48,9 +42,6 @@ void _OGTK::_myGameUpdate()
 			break;
 		case Task_Game:
 			nextTask = game.Update();
-			break;
-		case Task_Sample:
-			//nextTask = sample.UpDate();
 			break;
 		}
 	}

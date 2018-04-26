@@ -1,11 +1,17 @@
 #pragma once
 #include "Object\Object.h"
-#include "OGSystem\Easing\easing.hpp"
-class Title_Rogo : Object
+
+class Player : public Object
 {
 public:
-	Title_Rogo();
-	~Title_Rogo();
+	Player()
+	{
+
+	}
+	~Player()
+	{
+
+	}
 	void Initialize();
 	void Update();
 	void Finalize();
@@ -15,7 +21,4 @@ private:
 	//í«â¡ïœêî//
 	Texture image;
 	std::string FilePath;
-
-	Easing easing;
-	Vec2 Map_size;
 };

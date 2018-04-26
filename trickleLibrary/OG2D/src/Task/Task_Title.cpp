@@ -6,8 +6,6 @@ void Title::Initialize()
 
 	back.Initialize();
 	title_rogo.Initialize();
-	
-
 }
 
 TaskFlag Title::Update()
@@ -32,5 +30,4 @@ void Title::Finalize()
 	std::cout << "Title‰ð•ú" << std::endl;
 	title_rogo.Finalize();
 	back.Finalize();
-	cm.Destroy();
 }
