@@ -161,9 +161,6 @@
     <ClCompile Include="src\Player\Player.cpp">
       <Filter>ソースファイル\Player</Filter>
     </ClCompile>
-    <ClCompile Include="src\template\template.cpp">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Win\WinMain.h">
@@ -246,9 +243,6 @@
     </ClInclude>
     <ClInclude Include="src\Player\Player.h">
       <Filter>ソースファイル\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="src\template\template.h">
-      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

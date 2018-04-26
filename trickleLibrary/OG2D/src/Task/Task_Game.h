@@ -10,10 +10,13 @@
 #include "Back\Back.h"
 #include "Kard\Kard.h"
 #include "Map\Map.h"
+#include "Player\Player.h"
 
 class Game
 {
 public:
+	Game();
+	~Game();
 	void Initialize();
 	TaskFlag Update();
 	void Render2D();
@@ -30,4 +33,7 @@ private:
 	//ƒƒ“ƒo[ŠÖ”
 	//--------------------------------------------------------------------
 	Kard kard[3][6];//18–‡
+	Player player;
+	//----------------------------------------------------------------------
+	//ƒQ[ƒ€î•ñ//
 };

@@ -4,14 +4,8 @@
 class BackGround :public Object
 {
 public:
-	BackGround()
-	{
-
-	}
-	~BackGround()
-	{
-
-	}
+	BackGround();
+	~BackGround();
 	void Initialize();
 	void Update();
 	void Finalize();
