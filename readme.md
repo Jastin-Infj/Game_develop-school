@@ -1,7 +1,11 @@
-﻿Project Tricke
+OG2DLibrary
+============
+����2D�Q�[���p���C�u����
 
-次回　カードをめくるアニメーションの制作
-
-easingはラストにやっても平気なので後で実行する
-
-提出５月１０日
+�g�p�O�����C�u����
+	:OpenGL
+	:GLFW
+	:GLEW
+	:GLM
+	:OpenAL
+	
