@@ -26,11 +26,14 @@ void Title::UpDate()
 	//更新時に行う処理を記述
 	//--------------------
 	auto rogo = OGge->GetTask<Rogo>("Rogo");
-	if (rogo->GetEasingFlag())
+	if (rogo != nullptr)
 	{
-		if (OGge->in->key.down(Input::KeyBoard::S))
+		if (rogo->GetEasingFlag())
 		{
-			Kill();
+			if (OGge->in->key.down(Input::KeyBoard::S))
+			{
+				Kill();
+			}
 		}
 	}
 }
@@ -52,11 +55,11 @@ bool Title::Finalize()
 	{
 		back->Kill();
 	}
-	/*auto rogo = OGge->GetTask<Rogo>("Rogo");
+	auto rogo = OGge->GetTask<Rogo>("Rogo");
 	if (rogo)
 	{
 		rogo->Kill();
-	}*/
+	}
 
 	return true;
 }
