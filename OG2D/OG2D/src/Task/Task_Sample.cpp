@@ -1,40 +1,95 @@
 #include "Task_Sample.h"
-
-void Sample::Initialize()
+#include "Task_Sample2.h"
+#include "TestObject.h"
+bool Sample::Initialize()
 {
-	std::cout << "Sample‰Šú‰»" << std::endl;
-	s.createSound(file);
-	a.createSound(file2);
-	gameEngine->soundManager->SetSound(&s);
-	gameEngine->soundManager->SetSound(&a);
-	gameEngine->soundManager->SetMaxVolume(0.5f);
-	a.play();
-	s.play();
-	gameEngine->soundManager->SetVolume(&a, 0.5f);
+	std::cout << "Sample:" << "Initialize()" << std::endl;
+	__super::Init(taskName);
+	auto testObject = TestObject::Create(true);
+	//auto testObject2 = TestObject::Create(false);
+	this->testImg.Create((std::string)"back.png");
+	this->SetDrawOrder(0.0f);
+	__super::SetDrawOrder(0.0f);
+	time.Start();
+	return true;
 }
 
-TaskFlag Sample::UpDate()
+void Sample::UpDate()
 {
-	std::cout <<
-		s.currenttime() << 
-		":" << a.currenttime() << ":" << std::endl;
-	TaskFlag nowtask = Task_Sample;
-	if (gameEngine->in.key.down(In::SPACE))
+	std::cout << "update" << std::endl;
+	auto test = OGge->GetTasks<TestObject>("TestObject");
+	for (auto id = (*test).begin(); id != (*test).end(); ++id)
 	{
-		nowtask = Task_Title;
+		if ((*id)->TestCheck())
+		{
+
+		}
 	}
-	return nowtask;
+	if (OGge->in->key.down(In::SPACE))
+	{
+		this->Kill();
+	}
+	if (OGge->in->key.down(In::Z))
+	{
+		OGge->SetPause(true);
+		time.Pause();
+	}
+}
+
+void Sample::Pause()
+{
+	std::cout << "Puase" << std::endl;
+	if (OGge->in->key.down(In::Z))
+	{
+		OGge->SetPause(false);
+	}
 }
 
 void Sample::Render2D()
 {
-	
+	//std::cout << "Sample:" << "Render2D()" << std::endl;
+	//this->testImg.Draw(Box2D(0, 0, 960, 540), Box2D(0, 0, 1080, 720));
 }
 
-void Sample::Finalize()
+bool Sample::Finalize()
 {
-	std::cout << "Sample‰ð•ú" << std::endl;
-	s.stop();
-	a.stop();
-	gameEngine->soundManager->AllDelete();
+	std::cout << "Sample:" << "Finalize()" << std::endl;
+	this->testImg.Finalize();
+	if (this->GetNextTask() && !OGge->GetDeleteEngine())
+	{
+		//this->Kill(false);
+		auto nextTask = Sample2::Create(true);
+	}
+	return true;
+}
+
+Sample::Sample()
+{
+	std::cout << "Sample:" << "TaskObject()" << std::endl;
+}
+
+Sample::~Sample()
+{
+	std::cout << "Sample:" << "~TaskObject()" << std::endl;
+	this->Finalize();
+}
+
+Sample::SP Sample::Create(bool flag_)
+{
+	std::cout << "Sample:" << "Create()" << std::endl;
+	Sample::SP to = Sample::SP(new Sample());
+	if (to)
+	{
+		to->me = to;
+		if (flag_)
+		{
+			OGge->SetTaskObject(to);
+		}
+		if (!to->Initialize())
+		{
+			to->Kill();
+		}
+		return to;
+	}
+	return nullptr;
 }

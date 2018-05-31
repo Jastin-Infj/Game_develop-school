@@ -44,7 +44,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -107,12 +107,16 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <AdditionalLibraryDirectories>Windows\lib\Debug</AdditionalLibraryDirectories>
       <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -161,13 +165,20 @@
     <ClCompile Include="src\OGSystem\Font\Font.cpp" />
     <ClCompile Include="src\OGSystem\FPS\FPS.cpp" />
     <ClCompile Include="src\OGSystem\Input\Input.cpp" />
+    <ClCompile Include="src\OGSystem\OGlib.cpp" />
     <ClCompile Include="src\OGSystem\OGsystem.cpp" />
     <ClCompile Include="src\OGSystem\OGTask.cpp" />
+    <ClCompile Include="src\OGSystem\Random\Random.cpp" />
+    <ClCompile Include="src\OGSystem\ResourceManager\ResourceManager.cpp" />
+    <ClCompile Include="src\OGSystem\Shader\shader.cpp" />
+    <ClCompile Include="src\OGSystem\TaskObject.cpp" />
     <ClCompile Include="src\OGSystem\Texture\Texture.cpp" />
     <ClCompile Include="src\OGSystem\Timer\glTimer.cpp" />
     <ClCompile Include="src\OGSystem\Window\Window.cpp" />
     <ClCompile Include="src\OGSystem\_OGsystem.cpp" />
-    <ClCompile Include="src\Shader\shader.cpp" />
+    <ClCompile Include="src\Task\Task_Sample.cpp" />
+    <ClCompile Include="src\Task\Task_Sample2.cpp" />
+    <ClCompile Include="src\Task\TestObject.cpp" />
     <ClCompile Include="src\Win\WinMain.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -178,18 +189,24 @@
     <ClInclude Include="src\OGSystem\Audio\StreamingSound.h" />
     <ClInclude Include="src\OGSystem\Camera\Camera.h" />
     <ClInclude Include="src\OGSystem\Collision\Collision.h" />
-    <ClInclude Include="src\OGSystem\Easing\easing.hpp" />
+    <ClInclude Include="src\OGSystem\Easing\Easing.hpp" />
     <ClInclude Include="src\OGSystem\Font\Font.h" />
     <ClInclude Include="src\OGSystem\FPS\FPS.h" />
     <ClInclude Include="src\OGSystem\Input\Input.h" />
+    <ClInclude Include="src\OGSystem\OGlib.h" />
     <ClInclude Include="src\OGSystem\OGsystem.h" />
     <ClInclude Include="src\OGSystem\OGTask.h" />
+    <ClInclude Include="src\OGSystem\Random\Random.h" />
+    <ClInclude Include="src\OGSystem\ResourceManager\ResourceManager.h" />
+    <ClInclude Include="src\OGSystem\Shader\shader.h" />
+    <ClInclude Include="src\OGSystem\TaskObject.h" />
     <ClInclude Include="src\OGSystem\Texture\Texture.h" />
     <ClInclude Include="src\OGSystem\Timer\glTimer.h" />
     <ClInclude Include="src\OGSystem\Window\Window.h" />
     <ClInclude Include="src\OGSystem\_OGsystem.h" />
-    <ClInclude Include="src\Shader\shader.h" />
-    <ClInclude Include="src\Win\WinMain.h" />
+    <ClInclude Include="src\Task\Task_Sample.h" />
+    <ClInclude Include="src\Task\Task_Sample2.h" />
+    <ClInclude Include="src\Task\TestObject.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

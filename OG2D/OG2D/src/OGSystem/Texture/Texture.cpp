@@ -4,14 +4,13 @@
 //--------------------------------------------------
 //@:Textureclass									
 //--------------------------------------------------
-void Texture::TextureCreate(std::string path)
+bool Texture::Create(std::string& path)
 {
-	GLuint id;
-	this->TextureID = 1;
-	//テクスチャをサイズ分だけ生成する
-	glGenTextures(this->TextureID, &id);
+	//GLuint id;
+	//テクスチャを1つだけ生成する
+	glGenTextures(1, &this->_TexId);
 	//テクスチャをバインドする
-	glBindTexture(GL_TEXTURE_2D, id);
+	glBindTexture(GL_TEXTURE_2D, this->_TexId);
 	//画像を読み込む
 	int width;
 	int height;
@@ -24,7 +23,7 @@ void Texture::TextureCreate(std::string path)
 	//画像データをOpenGLへ送る
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 	glTexImage2D(GL_TEXTURE_2D, 0, type, width, height, 0, type, GL_UNSIGNED_BYTE, data);
-	TextureSize = Vec2(width, height);
+	this->TextureSize = Vec2(width, height);
 	//元データの破棄
 	stbi_image_free(data);
 	//表示用設定
@@ -33,18 +32,18 @@ void Texture::TextureCreate(std::string path)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
-	this->_TexId = id;
-	_materix[0] = { 0,0 };
-	_materix[1] = { width,0 };
-	_materix[2] = { width,height };
-	_materix[3] = { 0,height };
-	angle = 0.f;
+	this->_materix[0] = { 0,0 };
+	this->_materix[1] = { width,0 };
+	this->_materix[2] = { width,height };
+	this->_materix[3] = { 0,height };
+	this->angle = 0.f;
+	return true;
 }
 Texture::Texture()
 {
 
 }
-void Texture::Draw(Box2D draw, Box2D src,Color color_) {
+void Texture::Draw(Box2D& draw, Box2D& src,Color color_) {
 	//座標
 	GLfloat vtx[] = {
 		draw.x,draw.h,
@@ -65,7 +64,7 @@ void Texture::Draw(Box2D draw, Box2D src,Color color_) {
 	glAlphaFunc(GL_GREATER, (GLclampf)0.0);
 	glTexCoordPointer(2, GL_FLOAT, 0, texuv);
 	//OpenGLに登録されているテクスチャを紐づけ
-	glBindTexture(GL_TEXTURE_2D, _TexId);
+	glBindTexture(GL_TEXTURE_2D, this->_TexId);
 	glColor4f(color_.red, color_.green, color_.blue, color_.alpha);
 	//描画
 	//glMatrixMode(GL_TEXTURE);
@@ -79,10 +78,13 @@ void Texture::Draw(Box2D draw, Box2D src,Color color_) {
 	glDisable(GL_TEXTURE_2D);
 	glDisable(GL_ALPHA_TEST);
 	glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+	glBindTexture(GL_TEXTURE_2D, 0);
 }
-void Texture::Finalize()
+bool Texture::Finalize()
 {
+	glBindTexture(GL_TEXTURE_2D, 0);
 	glDeleteTextures(1, &this->_TexId);
+	return true;
 }
 void Texture::Rotate(float radian)
 {
@@ -108,17 +110,17 @@ void Texture::_Rotate(float radian, GLfloat *_mate)
 		sinf(tora),cosf(tora),
 	};
 	//回転行列の計算
-	*(_mate) = (v[0] * ma[0]) + (v[1] * ma[1]);
-	*(_mate + 1) = (v[0] * ma[2]) + (v[1] * ma[3]);
+	*(_mate) = (*(v) * *(ma)) + (*(v + 1)* *(ma + 1));
+	*(_mate + 1) = (*(v)* *(ma + 2)) + (*(v + 1)* *(ma + 3));
 
-	*(_mate + 2) = (v[2] * ma[0]) + (v[3] * ma[1]);
-	*(_mate + 3) = (v[2] * ma[2]) + (v[3] * ma[3]);
+	*(_mate + 2) = (*(v + 2)* *(ma)) + (*(v + 3)* *(ma + 1));
+	*(_mate + 3) = (*(v + 2)* *(ma + 2)) + (*(v + 3)* *(ma + 3));
 
-	*(_mate + 4) = (v[4] * ma[0]) + (v[5] * ma[1]);
-	*(_mate + 5) = (v[4] * ma[2]) + (v[5] * ma[3]);
+	*(_mate + 4) = (*(v + 4)* *(ma)) + (*(v + 5)* *(ma + 1));
+	*(_mate + 5) = (*(v + 4)* *(ma + 2)) + (*(v + 5)* *(ma + 3));
 
-	*(_mate + 6) = (v[6] * ma[0]) + (v[7] * ma[1]);
-	*(_mate + 7) = (v[6] * ma[2]) + (v[7] * ma[3]);
+	*(_mate + 6) = (*(v + 6)* *(ma)) + (*(v + 7)* *(ma + 1));
+	*(_mate + 7) = (*(v + 6)* *(ma + 2)) + (*(v + 7)* *(ma + 3));
 
 	//回転軸の原点の移動した分を元に戻す
 	*(_mate) = *(_mate)+Center.x;
@@ -133,7 +135,11 @@ void Texture::_Rotate(float radian, GLfloat *_mate)
 	*(_mate + 6) = *(_mate + 6) + Center.x;
 	*(_mate + 7) = *(_mate + 7) + Center.y;
 }
+Vec2 Texture::GetTextureSize() const
+{
+	return this->TextureSize;
+}
 Texture::~Texture()
 {
-	glDeleteTextures(1, &this->_TexId);
+	//glDeleteTextures(1, &this->_TexId);
 }
