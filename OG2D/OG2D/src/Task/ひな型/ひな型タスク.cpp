@@ -1,5 +1,6 @@
 #include "ひな形タスク.h"
 //別タスクや別オブジェクトを生成する場合ここにそのclassの書かれたhをインクルードする
+#include "ひな形オブジェクト.h"
 
 bool 「生成するclass名」::Initialize()
 {
@@ -9,7 +10,7 @@ bool 「生成するclass名」::Initialize()
 	this->taskName = "";			//検索時に使うための名を登録する
 	__super::Init(taskName);		//TaskObject内の処理を行う
 	//生成例
-
+	auto ひな形 = 「ひな形オブジェクト」::Create(true);
 	return true;
 }
 
@@ -18,6 +19,11 @@ void 「生成するclass名」::UpDate()
 	//--------------------
 	//更新時に行う処理を記述
 	//--------------------
+	if(OGge->in->key.down(In::X))
+	{
+		//自分を消す場合はKillを使う
+		this->Kill();
+	}
 }
 
 void 「生成するclass名」::Render2D()

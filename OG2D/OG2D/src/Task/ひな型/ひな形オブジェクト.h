@@ -11,7 +11,7 @@ class 「生成するclass名」 : public GameObject, public TaskObject
 public:
 	
 private:
-	Texture image;
+	Texture sampleImage;
 
 	//------------------
 	//固定化されている処理
@@ -20,7 +20,7 @@ public:
 	std::string taskName;
 	virtual ~「生成するclass名」();
 	typedef std::shared_ptr<「生成するclass名」> SP;
-	static 「生成するclass名」::SP Create(bool = true);
+	static 「生成するclass名」::SP Create(bool);
 	「生成するclass名」();
 	//-------------
 	//変更しないこと

@@ -9,7 +9,8 @@ bool 「生成するclass名」::Initialize()
 	this->taskName = "";			//検索時に使うための名を登録する
 	__super::Init(taskName);		//TaskObject内の処理を行う
 
-	
+	this->CreateObject(Cube, Vec2(100, 100), Vec2(128, 128), 0.0f);
+	this->sampleImage.Create("Collision.png");
 
 	return true;
 }
@@ -18,6 +19,11 @@ void 「生成するclass名」::UpDate()
 	//--------------------
 	//更新時に行う処理を記述
 	//--------------------
+	if(OGge->in->key.down(In::Z))
+	{
+		//自分を消す場合はKillを使う
+		this->Kill();
+	}
 }
 
 void 「生成するclass名」::Render2D()
@@ -25,7 +31,9 @@ void 「生成するclass名」::Render2D()
 	//--------------------
 	//描画時に行う処理を記述
 	//--------------------
-	
+	Box2D draw(this->position, this->Scale);
+	draw.OffsetSize();
+	this->sampleImage.Draw(draw, Box2D(0, 0, 128, 128));
 }
 
 bool 「生成するclass名」::Finalize()
@@ -33,7 +41,7 @@ bool 「生成するclass名」::Finalize()
 	//-----------------------------------------
 	//このオブジェクトが消滅するときに行う処理を記述
 	//-----------------------------------------
-	
+	this->sampleImage.Finalize();
 	//次のタスクを作るかかつアプリケーションが終了予定かどうか
 	if (this->GetNextTask() && !OGge->GetDeleteEngine())
 	{

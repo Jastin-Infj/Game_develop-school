@@ -17,7 +17,7 @@ public:
 	std::string taskName;
 	virtual ~「生成するclass名」();
 	typedef std::shared_ptr<「生成するclass名」> SP;
-	static 「生成するclass名」::SP Create(bool = true);
+	static 「生成するclass名」::SP Create(bool);
 	「生成するclass名」();
 	//-------------
 	//変更しないこと
